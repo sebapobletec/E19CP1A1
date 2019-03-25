@@ -10,5 +10,22 @@
   <%= @worker.last_name %>
 </p>
 
+<p>
+  <strong>Projects asigned:</strong>
+  <% if @worker.projects.present? %>
+  <% @worker.projects.each do |project|%>
+  <li><%= project.title %></li>
+  <% end %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Projects:</strong>
+  <% @projects.each do |project|%>
+  <li><%= project.title %></li>
+  <% end %>
+</p>
+
+
 <%= link_to 'Edit', edit_worker_path(@worker) %> |
 <%= link_to 'Back', workers_path %>
